@@ -23,6 +23,7 @@ class TaskController extends Controller
         $validation = Task::validate($request->all());
         if ($validation->fails()) {
             return response()->json($validation->errors(), 422);
+            
         }
         $task = Task::create($request->all());
         $task->user->notify(new TaskAssigned($task));
