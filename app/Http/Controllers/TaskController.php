@@ -10,19 +10,18 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        // dd($tasks);
         return view('tasks.index', compact('tasks'));
     }
 
     public function create()
     {
+        // dd(auth()->user()->name);
         return view('tasks.create');
     }
 
     public function store(Request $request)
     {
         $validation = Task::validate($request->all());
-        // dd($validation);
         if ($validation->fails()) {
             return redirect()->back()->withErrors($validation)->withInput();
         }

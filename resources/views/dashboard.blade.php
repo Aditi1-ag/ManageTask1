@@ -10,6 +10,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
+                    <div class="mt-4">
+                        <a href="{{ route('tasks.index') }}" class="btn btn-primary" style="background-color: #3490dc; border-color: #3490dc; padding: 10px 20px; border-radius: 4px; color: white; text-decoration: none;">
+                            View Tasks
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
